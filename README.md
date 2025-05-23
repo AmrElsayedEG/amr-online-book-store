@@ -1,48 +1,88 @@
+# 📚 Online Book Store
 
-# Online Book Store
+This Django project was developed by **Amr Elsayed** for a Paymob task. It leverages **Docker** and **Docker Compose** to streamline the development and deployment process. Below is a comprehensive overview of the project’s structure and usage.
 
-This Django project was developed by Amr Elsayed for Paymob's task. It runs using Docker and Docker Compose. The following sections provide a quick walkthrough of the project’s folder structure.
+---
 
+## 📂 Contents
+1. [Introduction](#1-introduction)  
+2. [How to Run the App](#2-how-to-run-the-app)  
+3. [Test Cases & Coverage](#3-test-cases--coverage)  
+4. [Postman Collection](#4-postman-collection)
 
-## Contents
-1- Introduction
+---
 
-2- How to run the app
+## 1. 📘 Introduction
 
-3- Test Cases & Coverage
+This project includes three core Django applications:
 
-4- Postman Collection
+- **User**:  
+  Handles the custom user model. Future features may include user profile endpoints.
 
-### 1- Introduction
-This project consists of 3 main applications as follows:
+- **Authenticate**:  
+  Manages user registration and login, with complete validation mechanisms.
 
-A. "User" application is responsible for creating the user model and could manage user profile endpoints in the futuure.
+- **Books**:  
+  Provides the core models — `Author`, `Book`, and `Review` — and the endpoints necessary for interaction with them.
 
-B. "Authenticate" application is responsible for the register and sign-in with all of the needed validations.
+---
 
-C. "Books" application is responsible for creating the main 3 models (Author - Book - Review) and has all needed endpoints to interact with them.
+## 2. 🚀 How to Run the App
 
-### 2- How to run the app
-This project uses Docker along with Docker-Compose to manage the connection and the network between Django application, Postgresql DB and Nginx.
+The project utilizes **Docker** and **Docker Compose** to connect:
 
-To run this app write the below command in the terminal
+- Django (running on Gunicorn)  
+- PostgreSQL (Database)  
+- Nginx (as a reverse proxy)
 
-`docker-compose up --build`
+### 🛠️ Steps to Run:
 
+1. Clone the repository.
+2. Ensure Docker and Docker Compose are installed.
+3. Use the following command to build and start the services:
+   ```bash
+   docker-compose up --build
 Note that we need .env file in order to init the app, A mock .env file has been added to the repo files just for test puropse as this is not recommended in a real life project
 
 After the containers are up, The application will be served on port 80 using Nginx, As it's acting as a reverse proxy to the Django app that is running through Gunicorm on port 8000.
 
-### 3- Test Cases & Coverage
-This app has test cases with 2 types, Integration test cases and unit test cases.
+---
 
-The "Integration" test cases are testing the REST endpoints, And the "Unit" test cases are testing the model functionalities and relations
+## 3. 🛠️ Test Cases & Coverage
+This project includes both unit and integration test cases:
 
-The test cases are inisde tests folder inside (authenticate, user and books) folder, We are using Mixer in order to create mock instances to interact with
+    Integration Tests: Validate REST API endpoints.
 
+    Unit Tests: Validate models, logic, and relationships.
+
+Test files are located in the tests folders within each app (authenticate, user, books).
+🧬 Tools Used:
+
+    Django Test Framework
+
+    Mixer for generating mock objects
+
+✅ Run Tests:
 To run the test cases through django run the following command in the terminal `python3 manage.py test` and to run with coverage `coverage run manage.py test`, Both commands should run inside the django app container.
 
 I also assured to cover all possible test cases, And when running `coverage report -m` We gonna get 100% on all of our code which means it's fully covered.
 
-### 4- Postman Collection
-In case you wanted to test some endpoints, You will find a postman collection in the project directory under the name (amr_book_store_postman_collection.json), Just import it into postman and register then sign-in, And that's it, No need to save the JWT Token anywhere i already specified a script to put it in the golbal vars of Postman, So you can test the endpoints directly.
+---
+
+## 4. 📭 Postman Collection
+You can find a ready-to-use Postman collection in the root directory:
+
+amr_book_store_postman_collection.json
+💡 Instructions:
+
+  Import the file into Postman.
+
+  Register and sign in.
+
+  JWT tokens are automatically set via a Postman script—no manual setup needed.
+
+  Start testing endpoints immediately!
+
+---
+## Finally !!
+🧑‍💻 Built with ❤️ by Amr Elsayed
