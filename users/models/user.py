@@ -8,12 +8,12 @@ from utils import UserTypeChoices
 
 class AbstractUser(AbstractBaseUser, PermissionsMixin):
 
-    name = models.CharField(_('name'),
+    username = models.CharField(_('username'),
                                   max_length=150,
                                   help_text="should be alpha only with max length 50",
                                   null=True)
 
-    email = models.EmailField(_('email address'), validators=[EmailValidator], unique=True, blank=True, null=True)
+    email = models.EmailField(_('email address'), validators=[EmailValidator], unique=True)
 
     phone = models.CharField(max_length=20, blank=True, null=True)
 
