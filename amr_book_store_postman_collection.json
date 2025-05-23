@@ -1,0 +1,1385 @@
+{
+	"info": {
+		"_postman_id": "3cb77b4f-3188-4655-8a6a-219f56cfe8e1",
+		"name": "Amr Book Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45059922"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"AmrElsayed\",\n    \"email\" : \"amr@elsayed.com\",\n    \"password\" : \"AmrTest\",\n    \"phone\" : \"+201121147961\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/api/auth/register/",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Error] Missing Fields",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"AmrElsayed\",\n    \"email\" : \"amr@elsayed.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/auth/register/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 12:03:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"password\": [\n        \"This field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "[Error] Existing Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"AmrElsayed\",\n    \"email\" : \"amr@elsayed.com\",\n    \"password\" : \"AmrTest\",\n    \"phone\" : \"+201121147961\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/auth/register/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 12:04:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": [\n        \"user with this email address already exists.\"\n    ]\n}"
+						},
+						{
+							"name": "[Success] Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"AmrElsayed\",\n    \"email\" : \"amr@elsayed.com\",\n    \"password\" : \"AmrTest\",\n    \"phone\" : \"+201121147961\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/auth/register/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 12:05:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"AmrElsayed\",\n    \"email\": \"amr@elsayed.com\",\n    \"phone\": \"+201121147961\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"let itemValue = response.access; // Change this based on your response structure",
+									"",
+									"// Set it as a global variable",
+									"pm.globals.set(\"access_token\", itemValue);",
+									"",
+									"// Log for debugging",
+									"console.log(\"Set global variable itemId:\", itemValue);",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"amr@elsayed.com\",\n    \"password\" : \"AmrTest\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/api/auth/login/",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"amr@elsayed.com\",\n    \"password\" : \"AmrTest\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/auth/login/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 12:15:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "572"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MDU5NDUwNSwiaWF0IjoxNzQ4MDAyNTA1LCJqdGkiOiI1NDk0MTIyNjZhMWM0YzliYWYyNmE5YmM1ZWIzMWUzZiIsInVzZXJfaWQiOjY4fQ.W4Q6vZTC9enEFiwfFTC1vwjlcUPnYOWJPoZQZhZHm0I\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NjA3MzA1LCJpYXQiOjE3NDgwMDI1MDUsImp0aSI6IjM4ZTk4Y2QzY2Y1YTRjMTdhMGJmZDdmMmQxNzI4ZWMzIiwidXNlcl9pZCI6Njh9.sK9pokSq0cpcywcT1YxRGYHp0Fn7RmrIyQTJ_n_6J7E\",\n    \"user_id\": 68,\n    \"username\": \"AmrElsayed\",\n    \"email\": \"amr@elsayed.com\",\n    \"user_type\": \"Customer\"\n}"
+						},
+						{
+							"name": "Invalid Creds",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"amro@elsayed.com\",\n    \"password\" : \"AmrTest\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/auth/login/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 12:15:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": [\n        \"Invalid Credentials\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "List Reviews",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_url}}/api/books/2/reviews/?rating=4",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"2",
+										"reviews",
+										""
+									],
+									"query": [
+										{
+											"key": "rating",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Reviews",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host_url}}/api/books/2/reviews/",
+											"host": [
+												"{{host_url}}"
+											],
+											"path": [
+												"api",
+												"books",
+												"2",
+												"reviews",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.27.5"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 May 2025 13:48:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "171"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"reviewer\": {\n                \"username\": \"AmrElsayed\"\n            },\n            \"rating\": 4,\n            \"comment\": \"Best Book Ever\",\n            \"updated_at\": \"2025-05-23 13:47:13\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rating\" : 4,\n    \"comment\" : \"Best Book Ever\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/books/2/reviews/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"2",
+										"reviews",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"rating\" : 7,\n    \"comment\" : \"Best Book Ever\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host_url}}/api/books/2/reviews/",
+											"host": [
+												"{{host_url}}"
+											],
+											"path": [
+												"api",
+												"books",
+												"2",
+												"reviews",
+												""
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.27.5"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 May 2025 13:39:07 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"rating\": [\n        \"Ensure this value is less than or equal to 5.\"\n    ]\n}"
+								},
+								{
+									"name": "Already submitted",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"rating\" : 4,\n    \"comment\" : \"Best Book Ever\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host_url}}/api/books/2/reviews/",
+											"host": [
+												"{{host_url}}"
+											],
+											"path": [
+												"api",
+												"books",
+												"2",
+												"reviews",
+												""
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.27.5"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 May 2025 13:46:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "57"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": [\n        \"You already submitted a rating to this book\"\n    ]\n}"
+								},
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"rating\" : 4,\n    \"comment\" : \"Best Book Ever\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host_url}}/api/books/2/reviews/",
+											"host": [
+												"{{host_url}}"
+											],
+											"path": [
+												"api",
+												"books",
+												"2",
+												"reviews",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.27.5"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 May 2025 13:47:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"rating\": 4,\n    \"comment\": \"Best Book Ever\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rating\" : 3,\n    \"comment\" : \"Best Book Ever\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_url}}/api/books/2/reviews/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"2",
+										"reviews",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Review",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"rating\" : 3,\n    \"comment\" : \"Best Book Ever\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host_url}}/api/books/2/reviews/",
+											"host": [
+												"{{host_url}}"
+											],
+											"path": [
+												"api",
+												"books",
+												"2",
+												"reviews",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.27.5"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 May 2025 14:11:56 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, PUT, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"rating\": 3,\n    \"comment\": \"Best Book Ever\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host_url}}/api/books/2/reviews/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"2",
+										"reviews",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Review",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host_url}}/api/books/2/reviews/",
+											"host": [
+												"{{host_url}}"
+											],
+											"path": [
+												"api",
+												"books",
+												"2",
+												"reviews",
+												""
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.27.5"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 May 2025 14:12:25 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, PUT, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "List All Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_url}}/api/books/list/?limit=3&search=Taha",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "publish_year",
+									"value": "2024",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Taha"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_url}}/api/books/list/?limit=3&search=Taha",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"list",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "3"
+										},
+										{
+											"key": "publish_year",
+											"value": "2024",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Taha"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 13:08:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "969"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 5,\n    \"next\": \"http://localhost/api/books/list/?limit=3&page=2&search=Taha\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 6,\n            \"title\": \"Book 6\",\n            \"author\": {\n                \"author_name\": \"Taha Hussein\",\n                \"picture\": \"http://localhost/media/authors_picture/4201622224212908.jpg\"\n            },\n            \"cover\": \"http://localhost/media/books_cover/old-books-cover-design-template-528851dfc1b6ed275212cd110a105122_screen_Y55uMr0.jpg\",\n            \"publish_year\": 1111\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Book 7\",\n            \"author\": {\n                \"author_name\": \"Taha Hussein\",\n                \"picture\": \"http://localhost/media/authors_picture/4201622224212908.jpg\"\n            },\n            \"cover\": \"http://localhost/media/books_cover/old-books-cover-design-template-528851dfc1b6ed275212cd110a105122_screen_KCMEVho.jpg\",\n            \"publish_year\": 2025\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Book 8\",\n            \"author\": {\n                \"author_name\": \"Taha Hussein\",\n                \"picture\": \"http://localhost/media/authors_picture/4201622224212908.jpg\"\n            },\n            \"cover\": \"http://localhost/media/books_cover/old-books-cover-design-template-528851dfc1b6ed275212cd110a105122_screen_nxJ1JvV.jpg\",\n            \"publish_year\": 2021\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_url}}/api/books/6/",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"6",
+								""
+							],
+							"query": [
+								{
+									"key": "publish_year",
+									"value": "2024",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_url}}/api/books/6/",
+									"host": [
+										"{{host_url}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"6",
+										""
+									],
+									"query": [
+										{
+											"key": "publish_year",
+											"value": "2024",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.27.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 May 2025 13:19:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "598"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"author\": {\n        \"id\": 2,\n        \"author_name\": \"Taha Hussein\",\n        \"birth_date\": \"2025-05-23\",\n        \"picture\": \"http://localhost/media/authors_picture/4201622224212908.jpg\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tellus velit, pulvinar ut vulputate vel, bibendum id diam.\"\n    },\n    \"title\": \"Book 6\",\n    \"cover\": \"http://localhost/media/books_cover/old-books-cover-design-template-528851dfc1b6ed275212cd110a105122_screen_Y55uMr0.jpg\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tellus velit, pulvinar ut vulputate vel, bibendum id diam\",\n    \"publish_year\": 1111\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
