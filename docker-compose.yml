@@ -1,0 +1,43 @@
+version: '3.7'
+services:
+  book_store_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app/
+      - backend_static:/app/staticfiles/
+      - backend_media:/app/media/
+    env_file:
+      - .env
+    expose:
+      - "8000"
+    depends_on:
+      - book_store_db
+
+  book_store_db:
+    image: postgres:13.0-alpine
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+
+  book_store_nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./deployment/default.conf:/etc/nginx/conf.d/default.conf
+      - backend_static:/app/staticfiles/
+      - backend_media:/app/media/
+    depends_on:
+      - book_store_backend
+
+volumes:
+  backend_static:
+  backend_media:
+  pg_data:
