@@ -11,4 +11,3 @@ def create_default_superuser(sender, **kwargs):
             email='admin@amr.com',
             password='admin'
         )
-        print("Superuser created: admin / admin")

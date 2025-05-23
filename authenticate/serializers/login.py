@@ -22,7 +22,6 @@ class LoginSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         user = User.objects.filter(email=attrs['email']).last()
-        print(user)
 
         if not user or not user.check_password(attrs['password']):
             raise serializers.ValidationError(self.error_msg['login'])
