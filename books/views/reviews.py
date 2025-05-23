@@ -35,7 +35,7 @@ class ReviewViewSet(mixins.ListModelMixin,
 
         if not review:
             return Response({"detail": "Review not found."},
-                            status=status.HTTP_403_FORBIDDEN)
+                            status=status.HTTP_404_NOT_FOUND)
 
         serializer = self.get_serializer(review, data=request.data, partial=kwargs.get('partial', False))
         serializer.is_valid(raise_exception=True)
@@ -47,7 +47,7 @@ class ReviewViewSet(mixins.ListModelMixin,
 
         if not review:
             return Response({"detail": "Review not found."},
-                            status=status.HTTP_403_FORBIDDEN)
+                            status=status.HTTP_404_NOT_FOUND)
 
         review.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

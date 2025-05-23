@@ -16,6 +16,5 @@ urlpatterns = [
     path('<int:id>/', RetrieveBookAPIView.as_view(), name='retrieve_book'),
 
     # Reviews CRUD APIs
-    # path('<int:book_id>/reviews/', ListCreateReviewAPIView.as_view(), name='list_create_reviews'),
-    path('<int:book_id>/reviews/', review_list, name='review-list-create')
+    path('<int:book_id>/reviews/', review_list, name='review_crud')
 ]

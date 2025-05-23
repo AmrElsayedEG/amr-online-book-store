@@ -11,5 +11,4 @@ urlpatterns = [
     # Login and Logout and Refresh Token Endpoints
     path('login/', LoginView.as_view(), name='login'),
     path('token/refresh/', TokenRefreshView.as_view(), name='refresh_token'),
-    path('logout/', LogoutView.as_view(), name='logout'),
 ]
