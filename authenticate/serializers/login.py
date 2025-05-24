@@ -3,6 +3,12 @@ from users.models import User
 from django.utils.translation import gettext_lazy as _
 
 class LoginSerializer(serializers.ModelSerializer):
+    """
+    Serializer for handling user login.
+
+    This serializer validates a user's email and password credentials.
+    If valid and the user is active, the authenticated user instance is added to the validated data.
+    """
 
     error_msg = {
         "login" : {

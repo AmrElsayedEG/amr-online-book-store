@@ -7,6 +7,12 @@ from rest_framework import filters
 from books.models import Book
 
 class ListBooksAPIView(ListAPIView):
+    """
+    API view to list all active books for authenticated customers.
+
+    This view provides a paginated list of books that are marked as active.
+    It supports filtering by `publish_year` and searching by `title` and author's name.
+    """
     serializer_class = BookCardSerializer
     permission_classes = (IsAuthenticated, IsCustomer,)
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]

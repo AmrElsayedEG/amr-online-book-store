@@ -4,6 +4,16 @@ from rest_framework.generics import CreateAPIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
 class LoginView(CreateAPIView):
+    """
+    API view to handle user login.
+
+    This view validates the provided credentials using the LoginSerializer.
+    On successful authentication, it returns a pair of JWT tokens (access and refresh),
+    along with basic user information.
+
+    Attributes:
+        serializer_class (LoginSerializer): The serializer class used to validate user credentials.
+    """
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
